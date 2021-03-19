@@ -61,7 +61,7 @@ Real f_kj(int k, int j, Real T)
   lf /= (C::hplanck*C::hplanck);
   Real lam_fac = pow(lf,1.5_rt);
   Real exp_fac = exp(-chi_eV[k][j]*C::ev2erg/kT);
-  return gfac[k][j]*lam_fac*exp_fac;
+  return 2.0_rt*gfac[k][j]*lam_fac*exp_fac;
 }
 
 // partition ion frac term
