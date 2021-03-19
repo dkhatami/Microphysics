@@ -1,0 +1,2 @@
+CEXE_headers += opac_util.H
+CEXE_headers += actual_opacity.H
