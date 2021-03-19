@@ -6,12 +6,13 @@
 
 
 // Ionization energies (in eV) taken from NIST(2020)
-extern std::vector<std::vector<Real>> chi_eV = {
-	{13.598434599702}, // Hydrogen
-	{24.587389011, 54.417765486}, // Helium
+//extern std::vector<std::vector<Real>> chi_eV = {
+constexpr Real chi_eV[4][8] = {
+	{13.598434599702,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, // Hydrogen
+	{24.587389011, 54.417765486,0.0,0.0,0.0,0.0,0.0,0.0}, // Helium
 	{11.2602880, 24.383154, // Carbon
 	 47.88778, 64.49352,
-	 392.090518, 489.993198},
+	 392.090518, 489.993198,0.0,0.0},
 	{13.618055, 35.12112, // Oxygen
 	 54.93554, 77.41350,
 	 113.8990, 138.1189,
@@ -22,10 +23,11 @@ extern std::vector<std::vector<Real>> chi_eV = {
 // on the partition function of the i and i+1th states
 // which in turn depend on temperature due to exp(-dE/kT)
 // g is only of order unity so shouldnt make too big of a deal
-extern std::vector<std::vector<Real>> gfac = {
-	{0.5},
-	{2.0, 0.5},
-	{0.6,0.2,2.0,0.5,2.0,0.5},
+//extern std::vector<std::vector<Real>> gfac = {
+constexpr Real gfac[4][8] = {
+	{0.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0},
+	{2.0, 0.5,0.0,0.0,0.0,0.0,0.0,0.0},
+	{0.6,0.2,2.0,0.5,2.0,0.5,0.0,0.0},
 	{0.5,2.0,0.6,0.2,2.0,0.5,2.0,0.5}};
 
 
